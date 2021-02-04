@@ -1,0 +1,18 @@
+{% extends 'theblog/base.html' %}
+
+{% block title %}Eliminar Post{% endblock title %}
+     
+
+{% block content %}
+     
+<h1>Eliminar</h1>
+<h3>Eliminar: {{post.title}}</h3>
+<div class="form-group">
+<form method="POST">
+    {% csrf_token %}
+        <strong>Estas seguro?</strong>
+    {{form.as_p}}
+    <button class="btn btn-secondary">Delete</button>
+
+</div>
+{% endblock %}  

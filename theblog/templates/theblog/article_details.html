@@ -1,0 +1,26 @@
+{% extends 'theblog/base.html' %}
+
+{% block title %}
+    {{post.title}}
+{% endblock title %}
+    
+{% block content %}
+    
+
+    
+    <h1>{{post.title}}</h1> 
+    <small>By: {{post.author.first_name}}
+            {{post.post_date}}<br/>
+    <hr>
+    <br/>
+   
+        
+    </small>
+    {{post.body}}
+    <a href="{% url 'update_post' post.pk %}">(Editar)</a> 
+        <a href="{% url 'delete_post' post.pk %}">(Eliminar)</a>
+
+        <br><br>
+        <a href="{% url 'home' %}"  class="btn btn-secondary">Back</a>
+
+{% endblock %}
